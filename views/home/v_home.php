@@ -229,7 +229,7 @@
                         <div class="features-product-item mb-30">
                             <div class="features-product-thumb">
                                 <div class="discount-tag">-20%</div>
-                                <a href="shop-details.html">
+                                <a href="product_detail.php?id=<?php echo $value->id ?>">
                                     <img style="width: 150px; height: 160px;" src="public/layout/img/product/<?php echo $value->image ?>" alt="">
                                 </a>
                                 <div class="product-overlay-action">
