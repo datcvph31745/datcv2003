@@ -134,14 +134,28 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <table class="table">
+                        <table class="table" border="1">
                             <thead class="table-dark">
                                 <tr>
-                                    <td></td>
+                                    <td width="140px">Tên sản phẩm</td>
+                                    <td>Hình</td>
+                                    <td width="90px">Giá tiền</td>
+                                    <td>mô tả</td>
+                                    <td width="130px">loại sản phẩm</td>
+                                    <td width="90px">#</td>
                                 </tr>
                             </thead>
                             <tbody>
-                                ...
+                                <?php foreach($listProducts as $key => $value) { ?>
+                                <tr>
+                                    <td><?php echo $value->name_product ?></td>
+                                    <td><img width="150px" src="../public/layout/img/product/<?php echo $value->image ?>" alt=""></td>
+                                    <td><?php echo $value->price ?></td>
+                                    <td><?php echo $value->description ?></td>
+                                    <td><?php echo $value -> name  ?></td>
+                                    <td><a href="deletePrd.php?id=<?php echo $value->id ?>"><i class="fa-solid fa-trash"></i></a> <span style="margin: 0 8px;"></span> <a href="editProduct.php?id=<?php echo $value->id ?>"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                                </tr>
+                                <?php } ?>
                             </tbody>
                         </table>
                     </div>

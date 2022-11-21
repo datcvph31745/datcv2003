@@ -1,5 +1,5 @@
 <?php 
-include "models/database.php";
+include "models/databaseAd.php";
 class m_user extends database {
     public function read_user() {
         $sql = "select * from users ";

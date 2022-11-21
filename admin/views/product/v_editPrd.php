@@ -1,9 +1,3 @@
-<!-- ============================================================== -->
-<!-- End Left Sidebar - style you can find in sidebar.scss  -->
-<!-- ============================================================== -->
-<!-- ============================================================== -->
-<!-- Page wrapper  -->
-<!-- ============================================================== -->
 <div class="page-wrapper">
     <!-- ============================================================== -->
     <!-- Bread crumb and right sidebar toggle -->
@@ -134,16 +128,38 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <table class="table">
-                            <thead class="table-dark">
-                                <tr>
-                                    <td></td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                ...
-                            </tbody>
-                        </table>
+                        <form class="form" action="" method="POST" enctype="multipart/form-data">
+                            <h1>Thêm sản phẩm</h1>
+                            <div class="mb-3">
+                                <label  for="formFile" class="form-label">Tên sản phẩm</label>
+                                <input style="border: 1px solid #333;" value="<?php echo $showPrd_detail->name_product ?>" class="form-control" type="text" name="ten_san_pham" placeholder="Tên sản phẩm">
+                            </div>
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">Chọn ảnh sản phẩm</label>
+                                <input style="border: 1px solid #333;" class="form-control" id="formFile" type="file" name="f_hinh_anh">
+                            </div>
+                            <!-- <input type="text" name="ma_loai" placeholder="Mã loại">  -->
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">Nhập đơn giá</label>
+                                <input style="border: 1px solid #333;" class="form-control" value="<?php echo $showPrd_detail->price ?>" type="text" name="don_gia" placeholder="Đơn giá">
+                            </div>
+                            <div class="mb-3">
+                                <select name="chose" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" style="width: 200px; padding: 8px;">
+                                    <option selected>Chọn loại sản phẩm</option>
+                                    <?php
+                                    foreach ($read_cate as $key => $value) { ?>
+                                        <option value="<?php echo $value->cate_id ?>"><?php echo $value->name ?></option>
+                                    <?php }
+                                    ?>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                            <textarea style="border: 1px solid #333;padding: 10px;"  name="mo_ta" placeholder="Mô tả" rows="10" id="" cols="156">
+                                <?php echo $showPrd_detail->description ?>
+                            </textarea>
+                            </div>
+                            <input  style="width: 200px;height: 45px;" class="btn btn-secondary" type="submit" name="btn">
+                        </form>
                     </div>
                 </div>
             </div>
