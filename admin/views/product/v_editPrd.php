@@ -129,10 +129,10 @@
                 <div class="card">
                     <div class="card-body">
                         <form class="form" action="" method="POST" enctype="multipart/form-data">
-                            <h1>Thêm sản phẩm</h1>
+                            <h1>Sửa sản phẩm</h1>
                             <div class="mb-3">
                                 <label  for="formFile" class="form-label">Tên sản phẩm</label>
-                                <input style="border: 1px solid #333;" value="<?php echo $showPrd_detail->name_product ?>" class="form-control" type="text" name="ten_san_pham" placeholder="Tên sản phẩm">
+                                <input style="border: 1px solid #333;" value="<?php echo $product_detail->name_product ?>" class="form-control" type="text" name="ten_san_pham" placeholder="Tên sản phẩm">
                             </div>
                             <div class="mb-3">
                                 <label for="formFile" class="form-label">Chọn ảnh sản phẩm</label>
@@ -141,7 +141,7 @@
                             <!-- <input type="text" name="ma_loai" placeholder="Mã loại">  -->
                             <div class="mb-3">
                                 <label for="formFile" class="form-label">Nhập đơn giá</label>
-                                <input style="border: 1px solid #333;" class="form-control" value="<?php echo $showPrd_detail->price ?>" type="text" name="don_gia" placeholder="Đơn giá">
+                                <input style="border: 1px solid #333;" class="form-control" value="<?php echo $product_detail->price ?>" type="text" name="don_gia" placeholder="Đơn giá">
                             </div>
                             <div class="mb-3">
                                 <select name="chose" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" style="width: 200px; padding: 8px;">
@@ -155,7 +155,7 @@
                             </div>
                             <div class="mb-3">
                             <textarea style="border: 1px solid #333;padding: 10px;"  name="mo_ta" placeholder="Mô tả" rows="10" id="" cols="156">
-                                <?php echo $showPrd_detail->description ?>
+                                <?php echo $product_detail->description ?>
                             </textarea>
                             </div>
                             <input  style="width: 200px;height: 45px;" class="btn btn-secondary" type="submit" name="btn">

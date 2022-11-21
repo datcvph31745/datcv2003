@@ -46,31 +46,64 @@ class c_product
             }
         }
     }
-    public function editPrd()
+    // public function editPrd()
+    // {
+    //     if (isset($_GET["id"])) {
+    //         $m_prd = new m_product();
+    //         $read_cate = $m_prd->read_cate();
+    //         $id = $_GET["id"];
+    //         $showPrd_detail = $m_prd->read_prd_by_id($id);
+    //         if (isset($_POST["btn"])) {
+    //             $ten_san_pham = $_POST['ten_san_pham'];
+    //             $chose = $_POST['chose'];
+    //             $mota = $_POST['mo_ta'];
+    //             $don_gia = $_POST['don_gia'];
+    //             $hinh = ($_FILES['f_hinh_anh']['error'] == 0) ? $_FILES['f_hinh_anh']['name'] : "";
+    //             $results = $m_prd->update_product_by_id($ten_san_pham, $hinh, $don_gia, $mota, $chose, $id);
+    //             if ($results==true) {
+    //                 if ($hinh != "") {
+    //                     move_uploaded_file($_FILES['f_hinh_anh']['tmp_name'], "../public/layout/img/product/$hinh");
+    //                 }
+    //                 // echo print_r($results);
+    //                 // die();
+
+    //                 header("location:product.php");
+    //             } else {
+    //                 echo "<script>alert('thêm không thành công')</script>";
+    //             }
+    //         }
+    //     }
+    //     $view = "views/product/v_editPrd.php";
+    //     include "templates/layout.php";
+    // }
+    public function editproduct()
     {
-        if (isset($_GET["id"])) {
-            $m_prd = new m_product();
-            $read_cate = $m_prd->read_cate();
-            $id = $_GET["id"];
-            $showPrd_detail = $m_prd->read_prd_by_id($id);
-            if (isset($_POST["btn"])) {
-                $ten_san_pham = $_POST['ten_san_pham'];
+        if (isset($_GET['id'])) {
+            $m_product = new m_product();
+            $read_cate = $m_product->read_cate();
+            $id = $_GET['id'];
+            $product_detail = $m_product->read_prd_by_id($id);
+            if (isset($_POST['btn'])) {
+                $ten_san_pham = $_POST["ten_san_pham"];
                 $chose = $_POST['chose'];
-                $mota = $_POST['mo_ta'];
-                $don_gia = $_POST['don_gia'];
-                $hinh = ($_FILES['f_hinh_anh']['error'] == 0) ? $_FILES['f_hinh_anh']['name'] : "";
-                $result = $m_prd->edit_Prd($ten_san_pham, $hinh, $don_gia, $mota, $chose, $id);
-                if ($result) {
+                $mota = $_POST["mo_ta"];
+                $hinh = ($_FILES['f_hinh_anh']['error'] == 0) ? $_FILES['f_hinh_anh']['name'] :"";
+                $don_gia = $_POST["don_gia"];
+                $result = $m_product->update_product_by_id($ten_san_pham,$hinh,$don_gia,$mota,$chose,$id);
+                if($result) {
                     if ($hinh != "") {
-                        move_uploaded_file($_FILES['f_hinh_anh']['tmp_name'], "../public/layout/img/product/$hinh");
+                        move_uploaded_file($_FILES['f_hinh_anh']['tmp_name'],"../public/layout/img/product/".$hinh);
                     }
+                    echo "<script>alert('thành công')</script>";
                     header("location:product.php");
-                } else {
-                    echo "<script>alert('thêm không thành công')</script>";
+                }else{
+                    echo "fail";
                 }
             }
+            
         }
         $view = "views/product/v_editPrd.php";
-        include "templates/layout.php";
+        include("templates/layout.php");
     }
+
 }
