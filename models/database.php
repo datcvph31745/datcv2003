@@ -31,7 +31,7 @@ class database{
         return $this->sta;
     }
     
-    //Funtion load datas on table
+    // hàm này lấy ra nhiều cột trong bảng
     public function loadAllRows($options=array()) {
         if(!$options) {
             if(!$result = $this->execute())
@@ -44,7 +44,7 @@ class database{
         return $result->fetchAll(PDO::FETCH_OBJ);
     }
     
-    //trả về 1 
+    //hàm này lấy ra 1 trong bảng 
     public function loadRow($option=array()) {
         if(!$option) {
             if(!$result = $this->execute())
@@ -57,7 +57,7 @@ class database{
         return $result->fetch(PDO::FETCH_OBJ);
     }
     
-    //Function count the record on the table
+    //hàm này nao mình làm thống kê bên admin để nó tính tổng số sản phẩm hay gì đó...
     public function loadRecord($option=array()) {
         if(!$option) {
             if(!$result = $this->execute())
