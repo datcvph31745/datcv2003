@@ -62,7 +62,7 @@ class c_product
                 $result = $m_prd->edit_Prd($ten_san_pham, $hinh, $don_gia, $mota, $chose, $id);
                 if ($result) {
                     if ($hinh != "") {
-                        move_uploaded_file($_FILES['f_hinh_anh']['tmp_name'], "../public/layout/img/product/". $hinh);
+                        move_uploaded_file($_FILES['f_hinh_anh']['tmp_name'], "../public/layout/img/product/$hinh");
                     }
                     header("location:product.php");
                 } else {

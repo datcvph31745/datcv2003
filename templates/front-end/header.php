@@ -85,12 +85,17 @@
                                 </div>
                                 <div class="navbar-wrap main-menu d-none d-lg-flex">
                                     <ul class="navigation">
-                                        <li class="active menu-item-has-children has--mega--menu"><a href="#">Home</a>
+                                        <li class="active menu-item-has-children has--mega--menu"><a href="index.php">Home</a>
                                         </li>
-                                        <li class="main-menu"><a href="shop.html">Shop</a>
+                                        <?php 
+                                        require_once "controllers/c_cate.php";
+                                        $category = c_cate::loadMenu();
+                                        ?>
+                                        <li class="main-menu"><a href="shop.php">Shop</a>
                                             <ul class="submenu">
-                                                <li><a href="shop-sidebar.html">Shirt</a></li>
-                                                <li><a href="shop-sidebar.html">Trousers</a></li>
+                                                <?php foreach($category as $key => $value) { ?>
+                                                <li><a href="cate.php?id=<?php echo $value->cate_id ?>"><?php echo $value->name ?></a></li>
+                                                <?php }?>
                                             </ul>
                                         </li>
                                         <li><a href="about-us.html">About Us</a></li>
