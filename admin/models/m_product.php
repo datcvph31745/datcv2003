@@ -25,10 +25,12 @@ class m_product extends database
         return $this->execute(array($ten_sp, $hinh, $gia, $mota, $loai_sp));
     }
     // sửa sản phẩm theo id
-    public function edit_Prd($ten_sp, $hinh, $gia, $mota, $loai_sp,$id)
+    public function update_product_by_id($ten_sp, $hinh, $gia, $mota, $loai_sp,$id)
     {
-        $sql = "update products set name_product = '$ten_sp', image= '$hinh', price = '$gia', description = '$mota', cate_id ='$loai_sp',
-        where id = '$id'";
+        // $sql = "UPDATE `products` SET `name_product`='$ten_sp', `image`='$hinh',` price` ='$gia', `description` ='$mota', `cate_id`='$loai_sp',
+        // where id = '$id'";
+        $sql = "update products set name_product = ?,image = ?,price = ?,description = ?,cate_id=? where
+        id = ?";
         $this->setQuery($sql);
         return $this->execute(array($ten_sp,$hinh,$gia,$mota,$loai_sp, $id));
     }
