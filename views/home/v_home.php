@@ -235,7 +235,7 @@
                                 <div class="product-overlay-action">
                                     <ul>
                                         <li><a href="cart.html"><i class="far fa-heart"></i></a></li>
-                                        <li><a href="shop-details.html"><i class="far fa-eye"></i></a></li>
+                                        <li><a href="product_detail.php?id=<?php echo $value->id ?>"><i class="far fa-eye"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -247,7 +247,7 @@
                                     <i class="far fa-star"></i>
                                     <i class="far fa-star"></i>
                                 </div>
-                                <h5><a href="shop-details.html"><?php echo $value->name_product ?></a></h5>
+                                <h5><a href="product_detail.php?id=<?php echo $value->id ?>"><?php echo $value->name_product ?></a></h5>
                                 <p class="price">$<?php echo $value->price ?></p>
                                 <div class="features-product-bottom">
                                     <ul>
@@ -266,6 +266,7 @@
                     <?php } ?>
                 </div>
             </div>
+
             <!-- <div class="tab-pane" id="women" role="tabpanel" aria-labelledby="women-tab">
                 <div class="row features-product-active">
                     <div class="col">
@@ -1178,6 +1179,7 @@
     </div>
 </section>
 <!-- features-product-area-end -->
+
 
 <!-- discount-area -->
 <section class="discount-area discount-bg jarallax parallax-img" data-background="public/layout/img/bg/discount_bg.jpg">
