@@ -1,5 +1,5 @@
 <?php
-include "models/m_cate.php";
+
 class c_cate
 {
     public static function loadMenu()
@@ -13,8 +13,10 @@ class c_cate
     {
         if (isset($_GET["id"])) {
             $id = $_GET["id"];
-            require_once "models/m_cate.php";
+            include "models/m_cate.php";
             $m_cate = new m_cate();
+            // echo $id;
+            // die();
             $prodcut_by_cate = $m_cate->read_prd_by_cate($id);
             // echo print_r($prodcut_by_cate);
             // die();
@@ -23,6 +25,7 @@ class c_cate
         include "templates/front-end/layout.php";
     }
     public function showAllShop() {
+        include "models/m_cate.php";
         $showall = new m_cate();
         $read_all_prd_shop = $showall->readAllProduct();
         $view = "views/cate/v_shop.php";
