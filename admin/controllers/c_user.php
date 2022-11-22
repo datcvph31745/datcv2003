@@ -21,4 +21,25 @@ class c_user {
        $m_user = new m_user;
        
     }
+    public function insertUser()
+    {
+        $user= new m_user();
+        $read_user=$user->read_user();
+        if(isset($_POST["btn-submit"])){
+            $fullname=$_POST['fullname'];
+            $username=$_POST['username'];
+            $password=$_POST['password'];
+            $email=$_POST['email'];
+            $result=$user->insertUser($fullname,$username,$password,$email);
+        }
+    }
+    public function deleteUser()
+    {
+        $delete=new m_user();
+        if(isset($_GET["id"])){
+            $id=$_GET["id"];
+            $result=$delete->deleteUser($id);
+            
+        }
+    }
 }
