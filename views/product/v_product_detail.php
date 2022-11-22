@@ -1,19 +1,21 @@
 <main>
     <section class="shop-details-area pt-100 pb-95">
+       
         <div class="container">
+        <?php foreach($prd_detail as $key => $value ) { ?>
             <div class="row">
                 <div class="col-lg-7">
                     <div class="shop-details-flex-wrap">
                         <div class="shop-details-nav-wrap">
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link active" id="item-one-tab" data-toggle="tab" href="#item-one" role="tab" aria-controls="item-one" aria-selected="true"><img src="img/product/sd_nav_img01.jpg" alt=""></a>
+                                    <a class="nav-link active" id="item-one-tab" data-toggle="tab" href="#item-one" role="tab" aria-controls="item-one" aria-selected="true"><img src="public/layout/img/product/<?php echo $value->image ?>" alt=""></a>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="item-two-tab" data-toggle="tab" href="#item-two" role="tab" aria-controls="item-two" aria-selected="false"><img src="img/product/sd_nav_img02.jpg" alt=""></a>
+                                    <a class="nav-link" id="item-two-tab" data-toggle="tab" href="#item-two" role="tab" aria-controls="item-two" aria-selected="false"><img src="public/layout/img/product/<?php echo $value->image ?>" alt=""></a>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="item-three-tab" data-toggle="tab" href="#item-three" role="tab" aria-controls="item-three" aria-selected="false"><img src="img/product/sd_nav_img03.jpg" alt=""></a>
+                                    <a class="nav-link" id="item-three-tab" data-toggle="tab" href="#item-three" role="tab" aria-controls="item-three" aria-selected="false"><img src="public/layout/img/product/<?php echo $value->image ?>" alt=""></a>
                                 </li>
                             </ul>
                         </div>
@@ -21,17 +23,17 @@
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="item-one" role="tabpanel" aria-labelledby="item-one-tab">
                                     <div class="shop-details-img">
-                                        <img src="img/product/shop_details_img01.jpg" alt="">
+                                        <img width="90%" src="public/layout/img/product/<?php echo $value->image ?>" alt="">
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="item-two" role="tabpanel" aria-labelledby="item-two-tab">
                                     <div class="shop-details-img">
-                                        <img src="img/product/shop_details_img02.jpg" alt="">
+                                        <img src="public/layout/img/product/<?php echo $value->image ?>" alt="">
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="item-three" role="tabpanel" aria-labelledby="item-three-tab">
                                     <div class="shop-details-img">
-                                        <img src="img/product/shop_details_img03.jpg" alt="">
+                                        <img src="public/layout/img/product/<?php echo $value->image ?>" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -40,8 +42,7 @@
                 </div>
                 <div class="col-lg-5">
                     <div class="shop-details-content">
-                        <a href="#" class="product-cat">Tracker Jacket</a>
-                        <h3 class="title">Woman Tracker Jacket</h3>
+                        <h3 class="title"><?php echo $value->name_product ?></h3>
                         <div class="rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -49,8 +50,10 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <p class="style-name">Style Name : TN-WI56-OMTJ-CqTKJ-09#</p>
-                        <div class="price">Price : $ 29.00</div>
+                        
+                        <p class="style-name">Style Name : <?php echo $value->name ?> </p>
+                        
+                        <div class="price">Price : $ <?php echo $value->price ?>.00</div>
                         <div class="product-details-info">
                             <span>Size <a href="#">Guide</a></span>
                             <div class="sidebar-product-size mb-30">
@@ -82,8 +85,8 @@
                                 <form action="#" class="num-block">
                                     <input type="text" class="in-num" value="1" readonly="">
                                     <div class="qtybutton-box">
-                                        <span class="plus"><img src="img/icon/plus.png" alt=""></span>
-                                        <span class="minus dis"><img src="img/icon/minus.png" alt=""></span>
+                                        <span class="plus"><img src="public/layout/img/icon/plus.png" alt=""></span>
+                                        <span class="minus dis"><img src="public/layout/img/icon/minus.png" alt=""></span>
                                     </div>
                                 </form>
                             </div>
@@ -108,6 +111,7 @@
                     </div>
                 </div>
             </div>
+            
             <div class="row">
                 <div class="col-12">
                     <div class="product-desc-wrap">
@@ -124,13 +128,7 @@
                                 <div class="product-desc-title mb-30">
                                     <h4 class="title">Additional information :</h4>
                                 </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                                    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                                    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                <p>The purpose of lorem ipsum is to create a natural looking block of text (sentence, paragraph, page, etc.) that doesn't
-                                    distract from the layout. A practice not without controversy, laying out pages with meaningless filler text can be very
-                                    useful when the focus is meant to be on design, not content.</p>
+                                <p><?php echo $value-> description ?></p>
                                 <div class="color-size-info">
                                     <ul>
                                         <li><span>COLOR :</span> Black, Gray</li>
@@ -223,6 +221,7 @@
                     </div>
                 </div>
             </div>
+            <?php } ?>
             <div class="related-product-wrap">
                 <div class="row">
                     <div class="col-12">
@@ -232,10 +231,11 @@
                     </div>
                 </div>
                 <div class="row related-product-active">
+                    <?php foreach($also as $key => $value) { ?>
                     <div class="col-xl-3">
                         <div class="new-arrival-item text-center">
                             <div class="thumb mb-25">
-                                <a href="shop-details.html"><img src="img/product/n_arrival_product01.jpg" alt=""></a>
+                                <a href="shop-details.html"><img src="public/layout/img/product/<?php echo $value->image ?>" alt=""></a>
                                 <div class="product-overlay-action">
                                     <ul>
                                         <li><a href="cart.html"><i class="far fa-heart"></i></a></li>
@@ -249,62 +249,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3">
-                        <div class="new-arrival-item text-center">
-                            <div class="thumb mb-25">
-                                <div class="discount-tag">- 20%</div>
-                                <a href="shop-details.html"><img src="img/product/n_arrival_product02.jpg" alt=""></a>
-                                <div class="product-overlay-action">
-                                    <ul>
-                                        <li><a href="cart.html"><i class="far fa-heart"></i></a></li>
-                                        <li><a href="shop-details.html"><i class="far fa-eye"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="content">
-                                <h5><a href="shop-details.html">Travelling Bags</a></h5>
-                                <span class="price">$25.00</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3">
-                        <div class="new-arrival-item text-center">
-                            <div class="thumb mb-25">
-                                <a href="shop-details.html"><img src="img/product/n_arrival_product03.jpg" alt=""></a>
-                                <div class="product-overlay-action">
-                                    <ul>
-                                        <li><a href="cart.html"><i class="far fa-heart"></i></a></li>
-                                        <li><a href="shop-details.html"><i class="far fa-eye"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="content">
-                                <h5><a href="shop-details.html">Exclusive Handbags</a></h5>
-                                <span class="price">$19.50</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3">
-                        <div class="new-arrival-item text-center">
-                            <div class="thumb mb-25">
-                                <div class="discount-tag new">New</div>
-                                <a href="shop-details.html"><img src="img/product/n_arrival_product04.jpg" alt=""></a>
-                                <div class="product-overlay-action">
-                                    <ul>
-                                        <li><a href="cart.html"><i class="far fa-heart"></i></a></li>
-                                        <li><a href="shop-details.html"><i class="far fa-eye"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="content">
-                                <h5><a href="shop-details.html">Women Shoes</a></h5>
-                                <span class="price">$12.90</span>
-                            </div>
-                        </div>
-                    </div>
+                    <?php } ?>
                 </div>
             </div>
         </div>
+
     </section>
     <!-- shop-details-area-end -->
 
