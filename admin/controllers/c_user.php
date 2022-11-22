@@ -39,7 +39,23 @@ class c_user {
         if(isset($_GET["id"])){
             $id=$_GET["id"];
             $result=$delete->deleteUser($id);
-            
+
+        }
+    }
+    public function editUser()
+    {
+        if(isset($_GET['id'])){
+            $m_user=new m_user();
+            $read_user=$m_user->read_user();
+            $id=$_GET['id'];
+
+            if(isset($_POST['btn'])){
+                $fullname=$_POST["fullname"];
+                $fullname=$_POST["username"];
+                $fullname=$_POST["email"];
+                $fullname=$_POST["password"];
+                $result=$m_user->undate_user_by_id($fullname,$username,$email,$password);
+            }
         }
     }
 }
