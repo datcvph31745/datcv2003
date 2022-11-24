@@ -148,7 +148,7 @@
                                     <td><?php echo $value->cate_id ?></td>
                                 
                                     <td><?php echo $value -> name  ?></td>
-                                    <td><a href="deleteCate.php?id=<?php echo $value->cate_id ?>"><i class="fa-solid fa-trash"></i></a> <span style="margin: 0 8px;"></span> <a href="editCate.php?id=<?php echo $value->cate_id ?>"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                                    <td><a href="deleteCate.php?id=<?php echo $value->cate_id ?>"><i class="fa-solid fa-trash"></i></a> <span style="margin: 0 8px;"></span> <a href="editCategories.php?id=<?php echo $value->cate_id ?>"><i class="fa-solid fa-pen-to-square"></i></a></td>
                                 </tr>
                                 <?php } ?>
                             </tbody>

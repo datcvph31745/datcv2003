@@ -1,10 +1,10 @@
 <?php
- include "models/m_cate.php";
- class c_cate{
+ include "models/m_categories.php";
+ class c_categories{
     public function show_Cate(){
         $show= new m_cate();
         $list_cate= $show -> read_all_cate();
-        $view = "views/cate/v_cate.php";
+        $view = "views/categories/v_categories.php";
         include "templates/layout.php";
 
     }
@@ -29,7 +29,7 @@
                 header("location:categories.php");
             }
         }
-        $view = "views/cate/v_addCate.php";
+        $view = "views/categories/v_add-cate.php";
         include "templates/layout.php";
     }
     public function edit_cate(){
@@ -45,7 +45,7 @@
                 }
             }
         }
-        $view = "views/cate/v_editCate.php";
+        $view = "views/categories/v_edit-cate.php";
         include "templates/layout.php";
     }
 

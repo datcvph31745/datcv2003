@@ -1,6 +1,6 @@
 <?php 
 class c_home {
-    public function index() {
+    public function home() {
         include "models/m_home.php";
         
 
