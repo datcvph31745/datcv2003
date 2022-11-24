@@ -134,20 +134,41 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <table class="table">
-                            <thead class="table-dark">
-                                <tr>
-                                    <td></td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                ...
-                            </tbody>
-                        </table>
+                    <div class="row">
+                                <canvas  id="myChart" style="width:100%;max-width:600px;margin: auto;" ></canvas>
+                                <script>
+                                    var xValues = [ "Tổng sản phẩm", " Tổng người dùng","Loại sản phẩm"];
+                                    var yValues = [<?php echo $total_product ?>, <?php echo $total_user ?>,<?php echo $total_categories ?>]
+                                    var barColors = [
+                                        "#b91d47",
+                                        "#00aba9",
+                                        "#2b5797",
+                                        
+            
+                                    ];
+                                    new Chart("myChart", {
+                                        type: "pie",
+                                        data: {
+                                            labels: xValues,
+                                            datasets: [{
+                                                backgroundColor: barColors,
+                                                data: yValues
+                                            }]
+                                        },
+                                        options: {
+                                            title: {
+                                                display: true,
+                                                text: ""
+                                            }
+                                        }
+                                    });
+                                </script>
+                            </div>
                     </div>
                 </div>
             </div>
         </div>
+        
         <!-- ============================================================== -->
         <!-- Sales chart -->
         <!-- ============================================================== -->
