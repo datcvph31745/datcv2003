@@ -129,7 +129,7 @@
                 <div class="card">
                     <div class="card-body">
                         <form class="form" action="" method="POST" enctype="multipart/form-data">
-                            <h1>Thêm sản phẩm</h1>
+                            <h1>Thêm người dùng</h1>
                             <div class="mb-3">
                                 <label  for="formFile" class="form-label">Họ và tên</label>
                                 <input style="border: 1px solid #333;" class="form-control" type="text" name="fullname" placeholder="Họ và tên">
@@ -148,7 +148,14 @@
                                 <input style="border: 1px solid #333;" class="form-control" type="text" name="password" placeholder="Mật khẩu">
                             </div>
                             <div class="mb-3">
-                            <textarea style="border: 1px solid #333;padding: 10px;"  name="mo_ta" placeholder="Mô tả" rows="10" id="" cols="156"></textarea>
+                                <select name="chose" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" style="width: 200px; padding: 8px;">
+                                    <option selected>Vai trò</option>
+                                    <?php
+                                    foreach ($read_user_cate as $key => $value) { ?>
+                                        <option value="<?php echo $value->id_role ?>"><?php echo $value->role ?></option>
+                                    <?php }
+                                    ?>
+                                </select>
                             </div>
                             <input value="Thêm" style="width: 200px;height: 45px;" class="btn btn-secondary" type="submit"  name="btn-submit">
                         </form>
