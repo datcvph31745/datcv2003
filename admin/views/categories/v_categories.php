@@ -1,3 +1,9 @@
+<!-- ============================================================== -->
+<!-- End Left Sidebar - style you can find in sidebar.scss  -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- Page wrapper  -->
+<!-- ============================================================== -->
 <div class="page-wrapper">
     <!-- ============================================================== -->
     <!-- Bread crumb and right sidebar toggle -->
@@ -128,30 +134,25 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <form class="form" action="" method="POST" enctype="multipart/form-data">
-                            <h1>Thêm sản phẩm</h1>
-                            <div class="mb-3">
-                                <label  for="formFile" class="form-label">Họ và tên</label>
-                                <input style="border: 1px solid #333;" class="form-control" type="text" name="fullname" placeholder="Họ và tên">
-                            </div>
-                            <div class="mb-3">
-                                <label for="formFile" class="form-label">Tên đăng nhập</label>
-                                <input style="border: 1px solid #333;" class="form-control" type="text" id="formFile" name="username" placeholder="Tên đăng nhập">
-                            </div>
-                            <!-- <input type="text" name="ma_loai" placeholder="Mã loại">  -->
-                            <div class="mb-3">
-                                <label for="formFile" class="form-label">Email</label>
-                                <input style="border: 1px solid #333;" class="form-control" type="email" name="email" placeholder="Email">
-                            </div>
-                            <div class="mb-3">
-                                <label for="formFile" class="form-label">Mật khẩu</label>
-                                <input style="border: 1px solid #333;" class="form-control" type="text" name="password" placeholder="Mật khẩu">
-                            </div>
-                            <div class="mb-3">
-                            <textarea style="border: 1px solid #333;padding: 10px;"  name="mo_ta" placeholder="Mô tả" rows="10" id="" cols="156"></textarea>
-                            </div>
-                            <input value="Thêm" style="width: 200px;height: 45px;" class="btn btn-secondary" type="submit"  name="btn-submit">
-                        </form>
+                        <table class="table" border="1">
+                            <thead class="table-dark">
+                                <tr>
+                                    <td width="140px">Mã danh mục</td>
+                                    <td>Tên danh mục</td>
+                                    <td>#</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach($list_cate as $key => $value) { ?>
+                                <tr>
+                                    <td><?php echo $value->cate_id ?></td>
+                                
+                                    <td><?php echo $value -> name  ?></td>
+                                    <td><a href="deleteCate.php?id=<?php echo $value->cate_id ?>"><i class="fa-solid fa-trash"></i></a> <span style="margin: 0 8px;"></span> <a href="editCategories.php?id=<?php echo $value->cate_id ?>"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                                </tr>
+                                <?php } ?>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
