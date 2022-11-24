@@ -1,9 +1,3 @@
-<!-- ============================================================== -->
-<!-- End Left Sidebar - style you can find in sidebar.scss  -->
-<!-- ============================================================== -->
-<!-- ============================================================== -->
-<!-- Page wrapper  -->
-<!-- ============================================================== -->
 <div class="page-wrapper">
     <!-- ============================================================== -->
     <!-- Bread crumb and right sidebar toggle -->
@@ -134,25 +128,37 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <table class="table" border="1">
-                            <thead class="table-dark">
-                                <tr>
-                                    <td width="140px">Mã danh mục</td>
-                                    <td>Tên danh mục</td>
-                                    <td>#</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach($list_cate as $key => $value) { ?>
-                                <tr>
-                                    <td><?php echo $value->cate_id ?></td>
-                                
-                                    <td><?php echo $value -> name  ?></td>
-                                    <td><a href="deleteCate.php?id=<?php echo $value->cate_id ?>"><i class="fa-solid fa-trash"></i></a> <span style="margin: 0 8px;"></span> <a href="editCate.php?id=<?php echo $value->cate_id ?>"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                                </tr>
-                                <?php } ?>
-                            </tbody>
-                        </table>
+                        <form class="form" action="" method="POST" enctype="multipart/form-data">
+                            <h1>Thêm người dùng</h1>
+                            <div class="mb-3">
+                                <label  for="formFile" class="form-label">Họ tên</label>
+                                <input style="border: 1px solid #333;" class="form-control" type="text" name="fullname" >
+                            </div>
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">Tên người dùng</label>
+                                <input style="border: 1px solid #333;" class="form-control" type="text" id="formFile" name="username">
+                            </div>
+                            <!-- <input type="text" name="ma_loai" placeholder="Mã loại">  -->
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">E-mail</label>
+                                <input style="border: 1px solid #333;" class="form-control" type="text" name="email" >
+                            </div>
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">Password</label>
+                                <input style="border: 1px solid #333;" class="form-control" type="text" name="password" >
+                            </div>
+                            <div class="mb-3">
+                                <select name="chose" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" style="width: 200px; padding: 8px;">
+                                    <?php
+                                    foreach ($read_role as $key => $value) { ?>
+                                        <option value="<?php echo $value->id_role ?>"><?php echo $value->fullname ?></option>
+                                    <?php }
+                                    ?>
+                                </select>
+                            </div>
+                            
+                            <input value="Thêm" style="width: 200px;height: 45px;" class="btn btn-secondary" type="submit"  name="btn-submit">
+                        </form>
                     </div>
                 </div>
             </div>

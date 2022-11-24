@@ -13,7 +13,7 @@ class c_product {
         }
 
         // tạm thời chưa cần lấy dữ liệu ra, cứ view ra đc layout đã rồi tính
-        $view = "views/product/v_product_detail.php";
+        $view = "views/cate/v_prd_detail.php";
         // sau khi tạo đc biến view thì phải inclulde layout.php 
         include "templates/front-end/layout.php";
     }

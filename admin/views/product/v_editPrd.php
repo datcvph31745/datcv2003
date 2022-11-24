@@ -138,6 +138,11 @@
                                 <label for="formFile" class="form-label">Chọn ảnh sản phẩm</label>
                                 <input style="border: 1px solid #333;" class="form-control" id="formFile" type="file" name="f_hinh_anh">
                             </div>
+                            <div class="mb-3">
+                                <label for="image" class="form-lable fs-3">Hoặc giữ lại ảnh cũ</label>
+                                <input id="img-old" name="img-old" type="hidden" class="form-control fs-4" value="<?php echo $product_detail->image ?>"> <br>
+                                <img src="../public/layout/img/product/<?php echo $product_detail->image ?>" alt="">
+                            </div>
                             <!-- <input type="text" name="ma_loai" placeholder="Mã loại">  -->
                             <div class="mb-3">
                                 <label for="formFile" class="form-label">Nhập đơn giá</label>
